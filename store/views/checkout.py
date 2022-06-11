@@ -11,6 +11,7 @@ from store.models.orders import Order
 class CheckOut(View):
     def post(self, request):
         address = request.POST.get('address')
+        package = request.POST.get('package')
         phone = request.POST.get('phone')
         customer = request.session.get('customer')
         cart = request.session.get('cart')
@@ -23,6 +24,7 @@ class CheckOut(View):
                           product=product,
                           price=product.price,
                           address=address,
+                          package=package,
                           phone=phone,
                           quantity=cart.get(str(product.id)))
             order.save()

@@ -71,6 +71,15 @@
             <form action="/check-out" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
+                  <label for="">Package</label>
+                  <select name="package" id="" class="form-control"  aria-describedby="helpId">
+                      <option value="Paper">Paper</option>
+                      <option value="Cellophane">Cellophane</option>
+                      <option value="Newspaper">Newspaper</option>
+                  </select>
+
+                </div>
+                <div class="form-group">
                   <label for="">Address</label>
                   <input type="text" name="address" id="" class="form-control" placeholder="" aria-describedby="helpId">
                   
